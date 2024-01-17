@@ -110,8 +110,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
                 width: size.width * 0.05,
                 colorFilter:
                     _getColorFilter(hslDark.toColor(), ui.BlendMode.srcIn),
-                package:
-                    imagePath ?? 'awesome_snackbar_content',
+                package: imagePath == null ? 'awesome_snackbar_content' : null,
               ),
             ),
           ),
