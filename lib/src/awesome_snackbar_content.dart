@@ -36,6 +36,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
 
   /// if you want to customize the font size of the message
   final double? messageFontSize;
+  final String? imagePath;
 
   const AwesomeSnackbarContent({
     Key? key,
@@ -46,6 +47,7 @@ class AwesomeSnackbarContent extends StatelessWidget {
     required this.message,
     required this.contentType,
     this.inMaterialBanner = false,
+    this.imagePath,
   }) : super(key: key);
 
   @override
@@ -103,12 +105,13 @@ class AwesomeSnackbarContent extends StatelessWidget {
                 bottomLeft: Radius.circular(20),
               ),
               child: SvgPicture.asset(
-                AssetsPath.bubbles,
+                imagePath ?? AssetsPath.bubbles,
                 height: size.height * 0.06,
                 width: size.width * 0.05,
                 colorFilter:
                     _getColorFilter(hslDark.toColor(), ui.BlendMode.srcIn),
-                package: 'awesome_snackbar_content',
+                package:
+                    imagePath ?? 'awesome_snackbar_content',
               ),
             ),
           ),
